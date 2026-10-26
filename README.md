@@ -1,15 +1,15 @@
 # jp-soccer-players-dict
 
-サッカー選手名のIME辞書(Google日本語入力 / Mozc / Microsoft IME対応)
+サッカー選手名のIME辞書(Microsoft IME / Google日本語入力 / Mozc対応)
 
 ## 目次
 
 - [概要](#概要)
 - [収録ファイル](#収録ファイル)
 - [インストール方法](#インストール方法)
+  - [Microsoft IME](#microsoft-ime)
   - [Google日本語入力](#google日本語入力)
   - [Mozc](#mozc)
-  - [Microsoft IME](#microsoft-ime)
 - [データ出典](#データ出典)
 - [注意事項](#注意事項)
 - [ライセンス](#ライセンス)
@@ -30,7 +30,7 @@
 | `players_overseas_*.txt` | 海外クラブ所属の日本人選手 + 日本代表(A代表) |
 | `players_all_*.txt` | 上記 + 年代別代表(U-23〜U-15) |
 
-拡張子の前の `mozc` / `googleime` / `msime` が、対応するIMEを表します
+拡張子の前の `msime` / `googleime` / `mozc` が、対応するIMEを表します
 (内容はほぼ共通ですが、各IMEが読み込める形式に合わせてヘッダー行のみ
 変えています)。
 
@@ -39,6 +39,12 @@
 まずこのリポジトリをクローン、またはZIPでダウンロードして展開してください。
 その中から、使っているIMEと登録したい範囲(overseas/all)に合うファイルを
 1つ選びます。
+
+### Microsoft IME
+
+Windows標準の「Microsoft IME ユーザー辞書ツール」の「ツール」メニューから
+「テキストファイルからの登録」を選び、`players_all_msime.txt`
+(または `players_overseas_msime.txt`)を読み込んでください。
 
 ### Google日本語入力
 
@@ -57,12 +63,6 @@ Linux(ibus-mozc / fcitx-mozc)の場合も同様です。
 3. `players_all_mozc.txt`(または `players_overseas_mozc.txt`)を選択
 4. 文字コードは「UTF-8」、形式は「Mozc」を選ぶ
 5. 辞書名を入力して「インポート」
-
-### Microsoft IME
-
-Windows標準の「Microsoft IME ユーザー辞書ツール」の「ツール」メニューから
-「テキストファイルからの登録」を選び、`players_all_msime.txt`
-(または `players_overseas_msime.txt`)を読み込んでください。
 
 ## データ出典
 
