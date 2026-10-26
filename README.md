@@ -77,4 +77,4 @@ Windows標準の「Microsoft IME ユーザー辞書ツール」の「ツール�
 
 ## ライセンス
 
-[MIT License](LICENSE)
+[CC0 1.0 Universal](LICENSE) (パブリックドメイン)
