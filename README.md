@@ -1,6 +1,6 @@
 # jp-soccer-players-dict
 
-サッカー選手名のIME辞書(Microsoft IME / Google日本語入力 / Mozc対応)
+サッカー選手名のIME辞書(Microsoft IME / Google日本語入力 / Mozc / Gboard対応)
 
 ## 目次
 
@@ -10,6 +10,7 @@
   - [Microsoft IME](#microsoft-ime)
   - [Google日本語入力](#google日本語入力)
   - [Mozc](#mozc)
+  - [Gboard](#gboard)
 - [データ出典](#データ出典)
 - [注意事項](#注意事項)
 - [ライセンス](#ライセンス)
@@ -23,16 +24,27 @@
 
 ## 収録ファイル
 
-対象選手の範囲ごとに2種類、IMEの形式ごとに3種類、合計6ファイルを配布します。
+対象選手の範囲ごとに2種類、IMEの形式ごとに4種類(Gboardのみ`.txt`と
+`.zip`の両方)、合計10ファイルを配布します。
 
 | ファイル名 | 対象 |
 | --- | --- |
-| `players_overseas_*.txt` | 海外クラブ所属の日本人選手 + 日本代表(A代表) |
-| `players_all_*.txt` | 上記 + 年代別代表(U-23〜U-15) |
+| `players_overseas_*` | 海外クラブ所属の日本人選手 + 日本代表(A代表) |
+| `players_all_*` | 上記 + 年代別代表(U-23〜U-15) |
 
-拡張子の前の `msime` / `googleime` / `mozc` が、対応するIMEを表します
-(内容はほぼ共通ですが、各IMEが読み込める形式に合わせてヘッダー行のみ
-変えています)。
+拡張子の前の `msime` / `googleime` / `mozc` / `gboard` が、対応するIMEを
+表します。`msime`/`googleime`/`mozc`の内容はほぼ共通で、各IMEが読み込める
+形式に合わせてヘッダー行のみ変えています。
+
+`gboard`だけは形式が異なります。Gboardのユーザー辞書インポートには
+「姓」「名」「人名」のような品詞を登録する仕組みが無く、3列目は品詞の
+代わりにロケール(`ja-JP`)として扱われるため、`gboard`版は品詞情報を
+持たないただの単語登録(同じ読み・単語の組は1行に重複排除)になります。
+また、GboardへのインポートはテキストファイルそのものではなくZIP圧縮
+したファイルを使うため、`players_overseas_gboard.zip` /
+`players_all_gboard.zip`も同梱しています(`.txt`は内容確認用です)。
+なおこのZIPインポートの形式はGoogle公式のドキュメントが見当たらず、
+コミュニティでの実例に基づくものです。
 
 ## インストール方法
 
@@ -65,6 +77,20 @@ Linux(ibus-mozc / fcitx-mozc)の場合も同様です。
 3. `players_all_mozc.txt`(または `players_overseas_mozc.txt`)を選択
 4. 文字コードは「UTF-8」、形式は「Mozc」を選ぶ
 5. 辞書名を入力して「インポート」
+
+### Gboard
+
+Android版Gboardの個人辞書(ユーザー辞書)へのインポート手順です。
+
+1. `players_all_gboard.zip`(または `players_overseas_gboard.zip`)を
+   端末に転送する
+2. Gboardの設定 →「辞書」→「個人辞書」を開き、対象の言語(日本語)を選ぶ
+3. 「インポート」からダウンロードした`.zip`ファイルを選択する
+4. 取り込みが終わるまで待つ(件数が多い場合、画面が止まって見えることが
+   あります)
+
+前述のとおりこの形式では品詞情報を持てないため、登録される単語は
+すべて品詞なしの単語になります。
 
 ## データ出典
 
