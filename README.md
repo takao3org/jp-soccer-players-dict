@@ -54,11 +54,9 @@
 
 ### Microsoft IME
 
-1. タスクバーの「あ」や「A」のアイコンを右クリックして「設定」を開く
-2. 「辞書/学習」の「ユーザー辞書」欄にある「編集」から
-   「Microsoft IME ユーザー辞書ツール」を起動する
-3. 「ツール」メニューから「テキストファイルの登録」を選ぶ
-4. `players_all_msime.txt`(または `players_overseas_msime.txt`)を選択して開く
+1. タスクバーの「あ」や「A」のアイコンを右クリックして「ユーザー辞書ツール」を選ぶ
+2. 「ツール」メニューから「テキストファイルからの登録」を選ぶ
+3. `players_all_msime.txt`(または `players_overseas_msime.txt`)を選択して開く
 
 ### Google日本語入力
 
